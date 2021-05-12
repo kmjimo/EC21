@@ -1,6 +1,6 @@
-Wed May 12 15:56 JST 2021
+Wed May 12 23:44:19 GMT+09:00 2021
 Problem: BitCount{}
-seed:1620802603319 turbo:false memory:false
+seed:1620830659708 turbo:false memory:false
 Operators:
 OnePointCrossover{CROSSOVER_RATE:0.6}
 BitMutation{MUTATION_RATE:0.01}
@@ -12,9 +12,9 @@ generation:1 maxFitness:8.0
 generation:2 maxFitness:8.0
 generation:3 maxFitness:9.0
 generation:4 maxFitness:9.0
-generation:5 maxFitness:9.0
-generation:6 maxFitness:9.0
-generation:7 maxFitness:9.0
+generation:5 maxFitness:10.0
+generation:6 maxFitness:10.0
+generation:7 maxFitness:10.0
 generation:8 maxFitness:10.0
 generation:9 maxFitness:10.0
 generation:10 maxFitness:10.0
@@ -109,7 +109,7 @@ generation:98 maxFitness:10.0
 generation:99 maxFitness:10.0
 generation:100 maxFitness:10.0
 ----------end----------
-Wed May 12 15:56 JST 2021
+Wed May 12 23:44:19 GMT+09:00 2021
 Total fitness evaluation:10000
 ----elite----
 elite fitness: 10.0
