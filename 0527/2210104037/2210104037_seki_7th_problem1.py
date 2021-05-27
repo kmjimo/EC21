@@ -46,6 +46,7 @@ if __name__ == '__main__':
     # double every element in S
     # in order for capacity of the knapsack to be integer 
     # halve output later
+    # It's not essential process (only for keeping it consistent with the explanation above.).
     for i in range(N):
         S[i] = S[i] * 2
     
@@ -90,9 +91,6 @@ if __name__ == '__main__':
     # print("Summation of S_A calculated from DP algorithm: {}".format(dp[N][W] // 2))
     print("Answer: {}".format(sum(S_A) - sum(S_B)))
     print("That is, min. of differnce of the summation of two subsets.\n")
-    print("The subsets that gives the min. is as follows:")
+    print("One example of the subsets that gives the min. is as follows:")
     print("S_A: {}, summation: {}".format(S_A, sum(S_A)))
     print("S_B: {}, summation: {}".format(S_B, sum(S_B)))
-    print("OR")
-    print("S_A: {}, summation: {}".format(S_B, sum(S_B)))
-    print("S_B: {}, summation: {}".format(S_A, sum(S_A)))
