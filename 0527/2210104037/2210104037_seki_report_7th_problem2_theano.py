@@ -37,36 +37,37 @@ of the determinant of the following matrix
 | (10cosθ - 2) (10sinθ) |
 '''
 
-# shared vector (scalar but handle theta as one-diretion vector)
-theta = shared(value=np.random.random(1),name="theta")
-
-# AOT (Area Of Triangle, ΔAP_1P_2)
-# Note that this is a signed area
-AreaOfTriangle = T.sum(abs(((5 * cos(2*theta) - 2) * (10 * sin(theta))) - ((10 * cos(theta) - 2) * (5 * sin(2*theta)))) / 2)
-
-# gradient of AOT, d(AOT)/dt
-gAOT = T.grad(cost=AreaOfTriangle, wrt=theta)
-
-# larning rate
-lr=shared(value=np.float32(0.05),name="lr")
-
-# so as to maxmizing "cost" (benefit),
-# the sign of the update equation is positive
-f = function(inputs=[], outputs=[AreaOfTriangle], updates=[(theta, (theta + lr * gAOT))])
-
-# update theta for 50 times
-for i in range(50):
-    # output the status of learning
-    print("Epoch: ", i + 1," y=", f()[0], "\t theta=", theta.get_value(), sep="")
-    # decrease the learning rate gradually
-    if (i+1) % 5==0: lr.set_value(lr.get_value()*np.float32(0.9))
+if __name__ == '__main__':
+    # shared vector (scalar but handle theta as one-diretion vector)
+    theta = shared(value=np.random.random(1),name="theta")
     
-# print output
-print("\n----------results of this program----------")
-print("Max. calclated by theano: {}".format(f()[0]))
-print("θ obtained with theano: {}".format(theta.get_value()[0]))
-# I calculated the max. of AOT manually
-# and turned out the output is correct.
-print("\n----------results of manual calc.----------")
-print("Max. calclated by manual: {}".format(75/8*np.sqrt(15)))
-print("θ calclated by manual: {}".format(np.arctan(-np.sqrt(15)) + np.pi))
+    # AOT (Area Of Triangle, ΔAP_1P_2)
+    # Note that this is a signed area
+    AreaOfTriangle = T.sum(abs(((5 * cos(2*theta) - 2) * (10 * sin(theta))) - ((10 * cos(theta) - 2) * (5 * sin(2*theta)))) / 2)
+    
+    # gradient of AOT, d(AOT)/dt
+    gAOT = T.grad(cost=AreaOfTriangle, wrt=theta)
+    
+    # larning rate
+    lr=shared(value=np.float32(0.05),name="lr")
+    
+    # so as to maxmizing "cost" (benefit),
+    # the sign of the update equation is positive
+    f = function(inputs=[], outputs=[AreaOfTriangle], updates=[(theta, (theta + lr * gAOT))])
+    
+    # update theta for 50 times
+    for i in range(50):
+        # output the status of learning
+        print("Epoch: ", i + 1," y=", f()[0], "\t theta=", theta.get_value(), sep="")
+        # decrease the learning rate gradually
+        if (i+1) % 5==0: lr.set_value(lr.get_value()*np.float32(0.9))
+        
+    # print output
+    print("\n----------results of this program----------")
+    print("Max. calclated by theano: {}".format(f()[0]))
+    print("θ obtained with theano: {}".format(theta.get_value()[0]))
+    # I calculated the max. of AOT manually
+    # and turned out the output is correct.
+    print("\n----------results of manual calc.----------")
+    print("Max. calclated by manual: {}".format(75/8*np.sqrt(15)))
+    print("θ calclated by manual: {}".format(np.arctan(-np.sqrt(15)) + np.pi))
