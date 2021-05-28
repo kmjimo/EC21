@@ -3,7 +3,7 @@
 Created on Fri May 28 15:34:48 2021
 @author: Yuya Seki
 Well, I'm beginner at python, 
-however, I decided to callenge to use sympy.
+however, I decided to callenge to use theano.
 """
 
 # numpy (ease of handling arrays)
