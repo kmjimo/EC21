@@ -20,7 +20,7 @@ import sympy
 from sympy import sin, cos
 
 if __name__ == '__main__':
-    # theta is liniar function of t, 
+    # theta is liniar function of t (not identically equal to zero), 
     # then we can equate t with theta
     theta = sympy.Symbol('theta', real=True, nonnegative=True)
     
@@ -47,6 +47,7 @@ if __name__ == '__main__':
     
     # find the max. at stopping points
     # it must be the biggest value of AOT in the field
+    # because area is finite however the shape of trigngle is
     ans = 0
     for x in sympy.solve(gAOT, theta):
         # sind area -> unsigned area
