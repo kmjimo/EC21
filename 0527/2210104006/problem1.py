@@ -18,7 +18,6 @@ move_value = 0
 counter = 0
 min_num = sum(Sa) - sum(Sb)  # initialize minimum value
 objective = 0  # initialize objective
-# display result
 
 # calculate minimum value
 while (True):
