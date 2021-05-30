@@ -13,11 +13,12 @@ for i in range(2, 100):
 
 # devide prime number into 2 part
 Sa = prime[0:len(prime)//2]
-Sb = prime[len(prime)//2+1:]
+Sb = prime[len(prime)//2:]
 move_value = 0
 counter = 0
 min_num = sum(Sa) - sum(Sb)  # initialize minimum value
 objective = 0  # initialize objective
+# display result
 
 # calculate minimum value
 while (True):
