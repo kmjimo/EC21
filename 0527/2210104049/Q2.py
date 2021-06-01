@@ -5,14 +5,10 @@ import sympy as spy
 
 theta = spy.Symbol("theta", real = True)
 
-a_x = 2
-a_y = 0
-p1_x = 5 * spy.cos(2 * theta)
-p1_y = 5 * spy.sin(2 * theta)
-p2_x = 10 * spy.cos(theta)
-p2_y = 10 * spy.sin(theta)
+ax, ay = 2, 0
+p1x, p1y, p2x, p2y = 5 * spy.cos(2 * theta), 5 * spy.sin(2 * theta), 10 * spy.cos(theta), 10 * spy.sin(theta)
 
-S = spy.simplify((p1_x - a_x) * (p2_y - a_y) - (p2_x - a_x) * (p1_y - a_y)) / 2
+S = spy.simplify((p1x - ax) * (p2y - ay) - (p1y - ay) * (p2x - ax)) / 2
 
 S_ = spy.diff(S, theta)
 theta_ = spy.solve(S_, theta)
