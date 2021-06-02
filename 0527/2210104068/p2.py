@@ -10,7 +10,6 @@ Observations : None
 
 # == Imports ==
 from sympy import *
-import sympy
 # =============
 
 
