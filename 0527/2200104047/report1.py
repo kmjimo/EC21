@@ -10,13 +10,13 @@ S.reverse()
 
 A=[]
 B=[]
-for i, name in enumerate(S):
-    if i == len(S)-1 or i%4==1 or i%4==2:
-        B.append(name)
+for i in S:
+    if sum(A)<sum(B):
+        A.append(i)
     else:
-        A.append(name)
-print(A)
-print(B)
-print(sum(A))
-print(sum(B))
-print(sum(A)-sum(B))        
+        B.append(i)
+print("A: ", A)
+print("B: ", B)
+print("sum of A: ", sum(A))
+print("sum of B: ", sum(B))
+print("A - B: ", sum(A)-sum(B))        
