@@ -20,7 +20,7 @@ for i in range(0, len(a1)):
     c = c - y + x
 
 #差を表示
-print(b-c)
+print("差は", b-c)
 
 a2 = [2,3]
 a2.extend(a1)
