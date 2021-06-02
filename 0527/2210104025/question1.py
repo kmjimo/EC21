@@ -39,7 +39,7 @@ for i in range(1, len(a2)):
   prime = 0
   if n > a2[-1]:
     n = n - ele_1 
-    #素数でないなら1を返す
+    #素因数分解をして、素数でないなら1を返す
     for i in range(2,n):
       if n % i == 0:
         prime = 1
