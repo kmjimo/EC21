@@ -32,3 +32,5 @@ def selMyOperator(individuals, k, tournsize, fit_attr, attr='max'):
                         break
 
     return new_individuals
+
+#2210104016
