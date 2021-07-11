@@ -6,7 +6,7 @@ def selMyOperator(individuals, k, tournsize, fit_attr, attr='max'):
     '''
     tournsize - The number of individuals participating in each tournament.
     fit_attr – The attribute of individuals to use as selection criterion.
-    attr - Set up the problem (maximization problem -> max, minimization problem -> min).
+    attr - Set up the problem (maximization problem : max, minimization problem : min).
 
     '''
 
